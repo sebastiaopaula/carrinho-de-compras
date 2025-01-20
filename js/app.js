@@ -1,5 +1,6 @@
+let carrinho = [];
+
 function adicionar(){
-    let carrinho = [];
     const {produto, preco} = pegarProdutoEPreco();
 
     if(produto && preco){
@@ -10,9 +11,9 @@ function adicionar(){
     } else {
         alert("Por favor, selecione um produto válido.");
     }
+    return{produto,preco};
 }
-alert('Vamos la');
-pegarProdutoEPreco();
+//pegarProdutoEPreco();
 
 function pegarProdutoEPreco(){       
     //Obter o elemento do select
@@ -29,5 +30,4 @@ function pegarProdutoEPreco(){
         //retornar o produto e o preço
         return{produto:pegarProduto,preco:parseFloat(pegarPreco)};
     }
-
 }
