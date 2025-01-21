@@ -11,6 +11,12 @@ function adicionar(){
     let produto = document.getElementById('produto').value;
     let nomeProduto = produto.split('-')[0];
     let valorUnitario = produto.split('R$')[1];
+    let quantidade = document.getElementById('quantidade').value;
+    
+    if (produto && quantidade>0 ){
+        let produto = document.getElementById('produto').value;
+    let nomeProduto = produto.split('-')[0];
+    let valorUnitario = produto.split('R$')[1];
     let quantidade = document.getElementById('quantidade').value;   
     //Calcular preço do subtotal
     let preco = quantidade * valorUnitario;
@@ -24,6 +30,10 @@ function adicionar(){
     let campoTotal = document.getElementById('valor-total');
     campoTotal.textContent = `R$ ${totalGeral}`;
     document.getElementById('quantidade').value = '';
+    }else{
+        alert(`Quantidade invalida: ${quantidade} `);
+    }
+    
 }
 
 function limpar(){
